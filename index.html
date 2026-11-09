@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Will you go out with me?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <span class="cloud c1"></span>
+    <span class="cloud c2"></span>
+    <span class="cloud c3"></span>
+    <span class="spark s1">✦</span>
+    <span class="spark s2">✦</span>
+    <span class="spark s3">♥</span>
+    <span class="hills"></span>
+  </div>
+
+  <main class="stage">
+
+    <!-- 1. The question -->
+    <section id="s1" class="screen active" aria-labelledby="q1">
+      <div class="frame frame-wide">
+        <img src="images/couple-1.jpg" alt="The two of us">
+      </div>
+      <h1 id="q1" class="title">Will you go out with me?</h1>
+      <div class="btn-row">
+        <button id="yes" class="px px-yes" type="button">YES<span aria-hidden="true">♥</span></button>
+        <button id="no" class="px px-no" type="button">No</button>
+      </div>
+      <p id="nag" class="nag" aria-live="polite">&nbsp;</p>
+    </section>
+
+    <!-- 2. Yay -->
+    <section id="s2" class="screen" aria-labelledby="q2">
+      <div class="frame frame-tall">
+        <img src="images/portrait-lake.jpg" alt="Smiling by the lake">
+      </div>
+      <h2 id="q2" class="title big">YAY!</h2>
+      <p class="sub">I knew you'd say yes ♥</p>
+      <button class="px px-soft" type="button" data-next="s3">Press to continue</button>
+    </section>
+
+    <!-- 3. Pick a date -->
+    <section id="s3" class="screen" aria-labelledby="q3">
+      <div class="frame frame-small">
+        <img src="images/portrait-balloons.jpg" alt="Standing under the balloon arch">
+      </div>
+      <h2 id="q3" class="title">Pick a date</h2>
+      <p class="sub">Choose the day for our first little date</p>
+      <input id="dateInput" class="px-input" type="date" aria-label="Date for our date">
+      <button id="toActivity" class="px px-soft" type="button" disabled>Continue</button>
+    </section>
+
+    <!-- 4. Pick an activity -->
+    <section id="s4" class="screen" aria-labelledby="q4">
+      <div class="frame frame-small">
+        <img src="images/friends-balloons.jpg" alt="Group photo at the party">
+      </div>
+      <h2 id="q4" class="title">What would you like to do?</h2>
+      <div id="choices" class="choices" role="radiogroup" aria-label="Activity">
+        <button class="px px-choice" type="button" role="radio" aria-checked="false">Dinner date</button>
+        <button class="px px-choice" type="button" role="radio" aria-checked="false">Movie night</button>
+        <button class="px px-choice" type="button" role="radio" aria-checked="false">Coffee &amp; walk</button>
+        <button class="px px-choice" type="button" role="radio" aria-checked="false">Picnic</button>
+        <button class="px px-choice" type="button" role="radio" aria-checked="false">Beach evening</button>
+        <button class="px px-choice" type="button" role="radio" aria-checked="false">Surprise me</button>
+      </div>
+      <button id="lockIn" class="px px-soft" type="button" disabled>Lock it in</button>
+    </section>
+
+    <!-- 5. It's a date -->
+    <section id="s5" class="screen" aria-labelledby="q5">
+      <h2 id="q5" class="title big">It's a date!</h2>
+
+      <div class="ticket">
+        <p><span>Date</span><strong id="outDate">-</strong></p>
+        <p><span>Plan</span><strong id="outActivity">-</strong></p>
+      </div>
+
+      <div class="gallery" id="gallery" aria-label="Our photos"></div>
+
+      <div class="note" role="region" aria-label="Love note">
+        <div class="note-bar"><span>love_note.txt</span><i aria-hidden="true">x</i></div>
+        <p id="noteText" class="note-text"></p>
+        <p id="noteSign" class="note-sign"></p>
+      </div>
+
+      <a id="shareBtn" class="px px-yes link-btn" href="#" target="_blank" rel="noopener">Send my answer</a>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
